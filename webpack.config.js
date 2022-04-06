@@ -7,8 +7,14 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 //not necessary, but we still want to use one so that we can be more specific with how 
 //webpack will function.
 //For a basic configuration, we need to provide webpack with three properties: entry, output, and mode. 
+const config = {
+    devServer: {
+    static: {
+      directory: __dirname
+    } 
+  },
+// module.exports = {
 
-module.exports = {
     entry: {
         app: './assets/js/script.js',
         events: './assets/js/events.js',
@@ -54,3 +60,6 @@ module.exports = {
     ],
     mode: 'development'//is usually set to production
 };
+
+
+module.exports = config;
